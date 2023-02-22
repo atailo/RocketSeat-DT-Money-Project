@@ -15,10 +15,13 @@ border-collapse: separate;
 border-spacing: 0 0.5rem;
 margin-top: 1.5rem;
 
+
+
 td{
-  
-  padding: 1.25rem 1rem;
+  padding: 1.25rem 2rem;
   background-color: ${props =>props.theme["gray-700"]};
+
+  
 
 
   &:first-child{
@@ -26,6 +29,11 @@ td{
     border-bottom-left-radius: 6px;
 
   }
+
+  &:nth-child(2n) {
+  text-align: right;
+  margin-right: 2rem;
+}
   &:last-child{
     border-top-right-radius: 6px;
     border-bottom-right-radius: 6px;

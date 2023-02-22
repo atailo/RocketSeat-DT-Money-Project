@@ -24,14 +24,14 @@ export function Transactions() {
             {transactions.map(transaction => {
               return (
                 <tr key={transaction.id}>
-                  <td width="50%">{transaction.description}</td>
+                  <td width="50%">{(transaction.description).toUpperCase()}</td>
                   <td>
                     <PricehighLigth variant={transaction.type}>
 
-                    {PriceFormatter.format(transaction.price)}
+                      {transaction.type === "outcome" ? `- ${PriceFormatter.format(transaction.price)}` : PriceFormatter.format(transaction.price)}
                     </PricehighLigth>
                   </td>
-                  <td>{transaction.category}</td>
+                  <td>{(transaction.category).toUpperCase()}</td>
                   <td> {DateFormatter.format(new Date(transaction.createdAt))}</td>
                 </tr>
               )
